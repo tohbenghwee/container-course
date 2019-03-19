@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mydb-pod
+  namespace: myspace
+  labels:
+    name: mydb-pod
+spec:
+  containers:
+    - name : mydb-myapp
+      image: stackupiss/northwind-db:v1
+      imagePullPolicy: IfNotPresent
+      ports: 
+        - containerPort: 3306
