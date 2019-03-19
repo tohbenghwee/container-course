@@ -1,0 +1,25 @@
+step 1. create a network
+        
+        docker network create mynet
+
+step 2. create a volume
+
+        docker volumne create myvolume
+        docker inspect myvolume
+
+step 3. Deploy the database image stackupiss/northwind-db:v1
+        
+        docker run -d \
+                   --network mynet \
+                   --volume myvolume:/var/lib/mysql \
+                   --name mydb \
+                   stackupiss/northwind-db:v1
+
+step 4. Depoy the web application
+
+        docker run  -d \
+                    -p 80:3000 \
+                    -e DB_HOST=mydb \
+                    --network mynet \
+                    --name myapp \
+                    swiftx123\server:v1
