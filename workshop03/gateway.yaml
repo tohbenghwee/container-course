@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: weatherapp-ingress
+  namespace: default
+spec:
+  selector:
+    istio: ingressgateway #controller
+  servers:
+  - hosts: 
+    - weatherapp.68.183.247.99.nip.io
+    port:
+      number: 80
+      protocol: HTTP
+      name: HTTP
