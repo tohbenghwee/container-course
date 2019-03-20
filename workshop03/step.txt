@@ -1,0 +1,11 @@
+1) Create file deploment.yaml
+        kubectl apply -f <(istioctl kube-inject -f deployment.yaml)
+2) Create file service.yaml
+        kubectl apply -f service.yaml
+3) Create file gateway.yaml
+        kubectl apply -f gateway.yaml
+4) Create file service-entry.yaml
+        kubectl apply -f service-entry.yaml
+5) Create file virtual-service.yaml
+        kubectl apply -f virtual-service.yaml
+        
