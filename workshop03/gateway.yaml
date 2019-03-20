@@ -8,7 +8,7 @@ spec:
     istio: ingressgateway #controller
   servers:
   - hosts: 
-    - weatherapp.68.183.247.99.nip.io
+    - weatherapp.206.189.243.72.nip.io
     port:
       number: 80
       protocol: HTTP

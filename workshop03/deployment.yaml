@@ -7,7 +7,7 @@ spec:
   template:
     metadata:
       labels:
-        app: weather-app-deployment
+        app: weather-app
         version: v1
     spec:
       containers:
