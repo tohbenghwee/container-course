@@ -1,0 +1,14 @@
+1) Create a helm project weatherapp
+    helm create weatherapp
+2) Edit the follwing files
+        a)Chart.yaml
+        b)values.yaml
+        c)service.yaml
+        d)deployment.yaml
+        e) NOTES.txt
+3) Install the Chart
+    helm install weatherapp/ --debug  --name v1
+4) Check the pod is running in kubeenetes
+    kubectl get pods -w
+5) Create the port forwarding (assume the pod name is v1-weatherapp-6b6f89fb79-k6nwz)
+    kubectl port-forward v1-weatherapp-6b6f89fb79-k6nwz 8080:3000
